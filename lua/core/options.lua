@@ -3,6 +3,32 @@ local g = vim.g
 
 local options = require("core.utils").load_config().options
 
+-- Disable Python2 etc providers
+g.loaded_python_provider = 0
+g.loaded_perl_provider = 0
+g.loaded_ruby_provider = 0
+
+g.python3_host_prog = os.getenv('PYTHON3')
+
+-- https://vonheikemen.github.io/devlog/tools/using-netrw-vim-builtin-file-explorer/
+-- Always show in tree view
+-- g.netrw_liststyle = 3
+
+-- Open file by default in new tab
+g.netrw_browse_split = 3
+g.netrw_list_hide= ".*\\.swp$,.*\\.pyc"
+
+-- Keep the current directory and the browsing directory synced. This helps you
+-- avoid the move files error. --- I think without this setting, if you try to
+-- move file from one directory to another, vim will error. This setting
+-- prevents this error - setting always changing pwd, which breaks some plugins
+g.netrw_keepdir = 0
+
+g.netrw_winsize = 30
+g.netrw_banner = 0
+-- Change the copy command. Mostly to enable recursive copy of directories.
+g.netrw_localcopydircmd = 'cp -r'
+
 opt.title = true
 opt.clipboard = options.clipboard
 opt.cmdheight = options.cmdheight
@@ -54,10 +80,10 @@ local disabled_built_ins = {
    "getscriptPlugin",
    "gzip",
    "logipat",
-   "netrw",
-   "netrwPlugin",
-   "netrwSettings",
-   "netrwFileHandlers",
+   -- "netrw",
+   -- "netrwPlugin",
+   -- "netrwSettings",
+   -- "netrwFileHandlers",
    "matchit",
    "tar",
    "tarPlugin",
