@@ -69,7 +69,6 @@ M.plugins = {
       telescope_media = false,
       vim_matchup = true, -- improved matchit
       cmp = true,
-      nvimtree = true,
       autopairs = true,
    },
    options = {
@@ -77,16 +76,7 @@ M.plugins = {
       lspconfig = {
          setup_lspconf = "", -- path of file containing setups of different lsps
       },
-      nvimtree = {
-         enable_git = 0,
 
-         ui = {
-            allow_resize = true,
-            side = "left",
-            width = 25,
-            hide_root_folder = true,
-         },
-      },
       luasnip = {
          snippet_path = {},
       },
@@ -95,7 +85,6 @@ M.plugins = {
          hidden = {
             "help",
             "dashboard",
-            "NvimTree",
             "terminal",
          },
          shown = {},
@@ -209,11 +198,6 @@ M.mappings.plugins = {
       set_loclist = "<leader>q",
       formatting = "<leader>fm",
       range_code_action = "<leader>ca",
-   },
-
-   nvimtree = {
-      toggle = "<C-n>",
-      focus = "<leader>e",
    },
 
    telescope = {

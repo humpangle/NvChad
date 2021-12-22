@@ -99,22 +99,6 @@ fg("DiagnosticError", red)
 fg("DiagnosticWarn", yellow)
 fg("DiagnosticInformation", green)
 
--- NvimTree
-fg("NvimTreeEmptyFolderName", blue)
-fg("NvimTreeEndOfBuffer", darker_black)
-fg("NvimTreeFolderIcon", folder_bg)
-fg("NvimTreeFolderName", folder_bg)
-fg("NvimTreeGitDirty", red)
-fg("NvimTreeIndentMarker", one_bg2)
-bg("NvimTreeNormal", darker_black)
-bg("NvimTreeNormalNC", darker_black)
-fg("NvimTreeOpenedFolderName", blue)
-fg("NvimTreeRootFolder", red .. " gui=underline") -- enable underline for root folder in nvim tree
-fg_bg("NvimTreeStatuslineNc", darker_black, darker_black)
-fg("NvimTreeVertSplit", darker_black)
-bg("NvimTreeVertSplit", darker_black)
-fg_bg("NvimTreeWindowPicker", red, black2)
-
 -- Telescope
 fg_bg("TelescopeBorder", darker_black, darker_black)
 fg_bg("TelescopePromptBorder", black2, black2)
@@ -149,15 +133,8 @@ for i, color in ipairs(section_title_colors) do
    vim.cmd("highlight CheatsheetTitle" .. i .. " guibg = " .. color .. " guifg=" .. black)
 end
 
--- Disable some highlight in nvim tree if transparency enabled
+-- Disable some highlight in telescope if transparency enabled
 if ui.transparency then
-   bg("NormalFloat", "NONE")
-   bg("NvimTreeNormal", "NONE")
-   bg("NvimTreeNormalNC", "NONE")
-   bg("NvimTreeStatusLineNC", "NONE")
-   bg("NvimTreeVertSplit", "NONE")
-   fg("NvimTreeVertSplit", grey)
-
    -- telescope
    bg("TelescopeBorder", "NONE")
    bg("TelescopePrompt", "NONE")

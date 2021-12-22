@@ -162,11 +162,6 @@ M.lspconfig = function()
    map("v", m.range_code_action, "<cmd>lua vim.lsp.buf.range_code_action()<CR>")
 end
 
-M.nvimtree = function()
-   map("n", plugin_maps.nvimtree.toggle, ":NvimTreeToggle <CR>")
-   map("n", plugin_maps.nvimtree.focus, ":NvimTreeFocus <CR>")
-end
-
 M.telescope = function()
    local m = plugin_maps.telescope
 

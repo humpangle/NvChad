@@ -201,17 +201,6 @@ return packer.startup(function()
       end,
    }
 
-   -- file managing , picker etc
-   use {
-      "kyazdani42/nvim-tree.lua",
-      disable = not plugin_settings.status.nvimtree,
-      cmd = { "NvimTreeToggle", "NvimTreeFocus" },
-      config = override_req("nvim_tree", "plugins.configs.nvimtree"),
-      setup = function()
-         require("core.mappings").nvimtree()
-      end,
-   }
-
    use {
       "nvim-telescope/telescope.nvim",
       module = "telescope",
